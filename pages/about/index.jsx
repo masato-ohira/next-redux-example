@@ -1,4 +1,4 @@
-import Layout from '../../src/layouts/default'
+import Layout from '~/layouts/default'
 
 const AboutPage = () => (
   <Layout>

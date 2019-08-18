@@ -1,8 +1,8 @@
-import Layout from '../src/layouts/default'
+import Layout from '~/layouts/default'
 import { withRouter } from 'next/router'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { setRoute, setName } from '../src/store/modules/route'
+import { setRoute, setName } from '~/store/modules/route'
 
 const routeSelector = state => state.route
 

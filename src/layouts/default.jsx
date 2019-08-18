@@ -1,5 +1,5 @@
-import styles from '../styles/index.scss'
-import AppHeader from './header/app-header'
+import styles from '~/styles/index.scss'
+import AppHeader from '~/layouts/header/app-header'
 
 const Layout = ({children}) => (
   <div style={styles}>
