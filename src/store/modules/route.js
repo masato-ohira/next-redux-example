@@ -1,6 +1,6 @@
 import sleep from 'sleep-promise'
 
-export const routeInitState = {
+const initState = {
   path: null,
   name: null,
 }
@@ -12,7 +12,7 @@ export const actionTypes = {
 
 // REDUCERS
 // ------------------------------
-export default function reducer(state = routeInitState, action) {
+export default function reducer(state = initState, action) {
   switch (action.type) {
     case actionTypes.PATH:
       return {

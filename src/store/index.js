@@ -6,10 +6,6 @@ import logger from 'redux-logger'
 import exampleReducer from '~/store/modules/example'
 import routeReducer from '~/store/modules/route'
 
-import { exInitState } from '~/store/modules/example'
-import { routeInitState } from '~/store/modules/route'
-
-
 // export function initializeStore (initialState = exampleInitialState) {
 //   return createStore(
 //     reducer,
@@ -18,11 +14,7 @@ import { routeInitState } from '~/store/modules/route'
 //   )
 // }
 
-
-export function initializeStore(initialState = {
-  ...exInitState,
-  ...routeInitState,
-}) {
+export function initializeStore(initialState = {}) {
   const store = reduxCreateStore(
     combineReducers({
       example: exampleReducer,
@@ -30,7 +22,7 @@ export function initializeStore(initialState = {
     }),
     initialState,
     composeWithDevTools(applyMiddleware(
-      logger,
+      // logger,
       thunkMiddleware,
     ))
   )
