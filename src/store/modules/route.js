@@ -41,6 +41,7 @@ export const setPath = (path) => {
 export const setRoute = (name) => {
   return async dispatch => {
     await sleep(1000)
+
     dispatch({
       type: actionTypes.NAME,
       name: 'async成功',
