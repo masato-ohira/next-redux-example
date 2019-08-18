@@ -35,6 +35,6 @@ yarn dev
 # ビルド
 yarn build
 
-# SSR
-yarn start
+# 静的化
+yarn generate
 ```

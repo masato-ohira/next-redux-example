@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "generate": "next build && next export -o dist",
     "git": "git add . && git commit -a -m $M",
     "git.auto": "git add . && git commit -a -m 'auto commit'"
   },
