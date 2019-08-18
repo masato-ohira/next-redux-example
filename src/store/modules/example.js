@@ -9,10 +9,10 @@ const initState = {
 }
 
 export const actionTypes = {
-  TICK: 'TICK',
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
-  RESET: 'RESET'
+  TICK: 'example/TICK',
+  INCREMENT: 'example/INCREMENT',
+  DECREMENT: 'example/DECREMENT',
+  RESET: 'example/RESET'
 }
 
 // REDUCERS
