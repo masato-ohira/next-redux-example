@@ -7,11 +7,13 @@
     "start": "next start",
     "generate": "next build && next export -o dist",
     "git": "git add . && git commit -a -m $M",
-    "git.auto": "git add . && git commit -a -m 'auto commit'"
+    "git.auto": "git add . && git commit -a -m 'auto commit'",
+    "deploy": "push-dir --dir=dist --branch=gh-pages"
   },
   "dependencies": {
     "bulma": "^0.7.5",
     "next": "^9.0.3",
+    "push-dir": "^0.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
