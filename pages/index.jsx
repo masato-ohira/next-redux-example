@@ -6,11 +6,11 @@ import { setName, setPath } from '~/store/modules/route'
 
 const routeSelector = state => state.route
 const IndexPage = withRouter((props) => {
-  // useDispatch で store に紐付いた dispatch が取得できます。
-  const dispatch = useDispatch()
 
-  // useSelector で store の state が取得できます。
-  const route = useSelector(routeSelector)
+  // useDispatch で store に紐付いた dispatch が取得できます
+  const dispatch   = useDispatch()
+  // useSelector で store の state が取得できます
+  const routeState = useSelector(routeSelector)
 
   return (
     <Layout>
@@ -19,12 +19,12 @@ const IndexPage = withRouter((props) => {
         <div className="buttons is-centered">
           <a
             className="button is-link"
-            onClick={dispatch.bind(this, setName())}>
+            onClick={() => dispatch(setName())}>
             TEST Async
           </a>
           <a
-            onClick={dispatch.bind(this, setPath(props.router))}
-            className="button is-primary">
+            className="button is-primary"
+            onClick={() => dispatch(setPath(props.router))}>
             GET Router
           </a>
         </div>
@@ -42,8 +42,8 @@ const IndexPage = withRouter((props) => {
             </thead>
             <tbody>
               <tr>
-                <td>{ route.name }</td>
-                <td>{ route.path }</td>
+                <td>{ routeState.name }</td>
+                <td>{ routeState.path }</td>
               </tr>
             </tbody>
           </table>
