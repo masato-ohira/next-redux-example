@@ -1,0 +1,34 @@
+{
+  "name": "next-redux-example",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "git": "git add . && git commit -a -m $M",
+    "git.auto": "git add . && git commit -a -m 'auto commit'"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": ">=12.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": ">=2.16.0",
+    "eslint-plugin-jest": ">=22.3.0",
+    "eslint-plugin-node": ">=8.0.1",
+    "eslint-plugin-promise": ">=4.0.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": ">=4.0.0",
+    "node-sass": "^4.12.0"
+  }
+}
