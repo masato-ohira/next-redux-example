@@ -1,7 +1,8 @@
-import { createStore, applyMiddleware } from 'redux'
-import { composeWithDevTools } from 'redux-devtools-extension'
 
-const exampleInitialState = {
+// import { createStore, applyMiddleware } from 'redux'
+// import { composeWithDevTools } from 'redux-devtools-extension'
+
+const initState = {
   lastUpdate: 0,
   light: false,
   count: 0
@@ -15,7 +16,8 @@ export const actionTypes = {
 }
 
 // REDUCERS
-export const reducer = (state = exampleInitialState, action) => {
+// ------------------------------
+export default function reducer(state = initState, action) {
   switch (action.type) {
     case actionTypes.TICK:
       return Object.assign({}, state, {
@@ -32,7 +34,7 @@ export const reducer = (state = exampleInitialState, action) => {
       })
     case actionTypes.RESET:
       return Object.assign({}, state, {
-        count: exampleInitialState.count
+        count: initState.count
       })
     default:
       return state
@@ -40,6 +42,7 @@ export const reducer = (state = exampleInitialState, action) => {
 }
 
 // ACTIONS
+// ------------------------------
 export const serverRenderClock = () => {
   return { type: actionTypes.TICK, light: false, ts: Date.now() }
 }
@@ -59,10 +62,10 @@ export const resetCount = () => {
   return { type: actionTypes.RESET }
 }
 
-export function initializeStore (initialState = exampleInitialState) {
-  return createStore(
-    reducer,
-    initialState,
-    composeWithDevTools(applyMiddleware())
-  )
-}
+// export function initializeStore (initialState = exampleInitialState) {
+//   return createStore(
+//     reducer,
+//     initialState,
+//     composeWithDevTools(applyMiddleware())
+//   )
+// }

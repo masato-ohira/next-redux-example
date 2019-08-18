@@ -5,7 +5,12 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: 'eslint:recommended',
+  parser: 'babel-eslint',
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended'
+    // 'plugin:react/recommended',
+  ],
   globals: {
     React: 'writable',
     Atomics: 'readonly',
@@ -18,11 +23,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  plugins: [
-    'react'
-  ],
+  plugins: [ 'react' ],
   rules: {
+    'react/jsx-uses-react': [1],
     'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 1,
     'arrow-spacing': [2, {
       before: true,
       after: true,
