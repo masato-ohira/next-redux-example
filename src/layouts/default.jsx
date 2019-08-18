@@ -1,8 +1,8 @@
-import styles from '~/styles/index.scss'
+// import styles from '~/styles/index.scss'
 import AppHeader from '~/layouts/header/app-header'
 
 const Layout = ({children}) => (
-  <div style={styles}>
+  <div>
     {/* <style jsx>{styles}</style> */}
     <AppHeader/>
     <div className="container">

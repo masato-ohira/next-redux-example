@@ -1,10 +1,6 @@
-
-// import { createStore, applyMiddleware } from 'redux'
-// import { composeWithDevTools } from 'redux-devtools-extension'
-
 import sleep from 'sleep-promise'
 
-const initState = {
+export const routeInitState = {
   path: null,
   name: null,
 }
@@ -16,16 +12,18 @@ export const actionTypes = {
 
 // REDUCERS
 // ------------------------------
-export default function reducer(state = initState, action) {
+export default function reducer(state = routeInitState, action) {
   switch (action.type) {
     case actionTypes.PATH:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         path: action.path,
-      })
+      }
     case actionTypes.NAME:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         name: action.name,
-      })
+      }
     default:
       return state
   }
@@ -33,12 +31,17 @@ export default function reducer(state = initState, action) {
 
 // ACTIONS
 // ------------------------------
-export const setPath = (path) => {
-  return {
-    type: actionTypes.PATH, path,
+export const setPath = (router) => {
+  return async dispatch => {
+    await sleep(500)
+    console.log({router})
+    dispatch({
+      type: actionTypes.PATH,
+      path: JSON.stringify(router.query),
+    })
   }
 }
-export const setRoute = (name) => {
+export const setName = () => {
   return async dispatch => {
     await sleep(1000)
 

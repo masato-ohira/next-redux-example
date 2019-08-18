@@ -2,7 +2,7 @@
 // import { createStore, applyMiddleware } from 'redux'
 // import { composeWithDevTools } from 'redux-devtools-extension'
 
-const initState = {
+export const exInitState = {
   lastUpdate: 0,
   light: false,
   count: 0
@@ -17,7 +17,7 @@ export const actionTypes = {
 
 // REDUCERS
 // ------------------------------
-export default function reducer(state = initState, action) {
+export default function reducer(state = exInitState, action) {
   switch (action.type) {
     case actionTypes.TICK:
       return Object.assign({}, state, {
@@ -34,7 +34,7 @@ export default function reducer(state = initState, action) {
       })
     case actionTypes.RESET:
       return Object.assign({}, state, {
-        count: initState.count
+        count: exInitState.count
       })
     default:
       return state

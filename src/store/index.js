@@ -3,8 +3,11 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import logger from 'redux-logger'
 
-import exampleReducer from './modules/example'
-import routeReducer from './modules/route'
+import exampleReducer from '~/store/modules/example'
+import routeReducer from '~/store/modules/route'
+
+import { exInitState } from '~/store/modules/example'
+import { routeInitState } from '~/store/modules/route'
 
 
 // export function initializeStore (initialState = exampleInitialState) {
@@ -16,18 +19,20 @@ import routeReducer from './modules/route'
 // }
 
 
-export function initializeStore(initialState = {sample: null}) {
+export function initializeStore(initialState = {
+  ...exInitState,
+  ...routeInitState,
+}) {
   const store = reduxCreateStore(
     combineReducers({
       example: exampleReducer,
       route: routeReducer,
     }),
     initialState,
-    applyMiddleware(
+    composeWithDevTools(applyMiddleware(
       logger,
       thunkMiddleware,
-    )
-    // composeWithDevTools(applyMiddleware())
+    ))
   )
   return store
 }

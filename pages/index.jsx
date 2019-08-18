@@ -2,16 +2,9 @@ import Layout from '~/layouts/default'
 import { withRouter } from 'next/router'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { setRoute, setName } from '~/store/modules/route'
+import { setName, setPath } from '~/store/modules/route'
 
 const routeSelector = state => state.route
-
-// const getProps = (props) => {
-//   console.log({
-//     router: props.router
-//   })
-// }
-
 const IndexPage = withRouter((props) => {
   // useDispatch で store に紐付いた dispatch が取得できます。
   const dispatch = useDispatch()
@@ -22,11 +15,35 @@ const IndexPage = withRouter((props) => {
   return (
     <Layout>
       <div className="box">
-        <div className="title is-3">Home</div>
-        <div onClick={dispatch.bind(this, setRoute(props.router.route))} className="button">
-          GET Router
+        <div className="title is-3 has-text-centered">Home</div>
+        <div className="buttons is-centered">
+          <a onClick={dispatch.bind(this, setName())} className="button is-link">
+            TEST Async
+          </a>
+          <a onClick={dispatch.bind(this, setPath(props.router))} className="button is-primary">
+            GET Router
+          </a>
         </div>
-        <div>{ route.name }</div>
+        <div className="field has-text-centered">
+          <table className="table is-fullwidth">
+            <colgroup>
+              <col width="20%" />
+              <col/>
+            </colgroup>
+            <thead>
+              <tr>
+                <th>async</th>
+                <th>route</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{ route.name }</td>
+                <td>{ route.path }</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </Layout>
   )
