@@ -17,10 +17,14 @@ const IndexPage = withRouter((props) => {
       <div className="box">
         <div className="title is-3 has-text-centered">Home</div>
         <div className="buttons is-centered">
-          <a onClick={dispatch.bind(this, setName())} className="button is-link">
+          <a
+            className="button is-link"
+            onClick={dispatch.bind(this, setName())}>
             TEST Async
           </a>
-          <a onClick={dispatch.bind(this, setPath(props.router))} className="button is-primary">
+          <a
+            onClick={dispatch.bind(this, setPath(props.router))}
+            className="button is-primary">
             GET Router
           </a>
         </div>
