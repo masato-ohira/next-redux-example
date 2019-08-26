@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { withRouter } from 'next/router'
+import './app-header.scss'
 
 // ------------------------------
 const isActive = (path, propsRoute) => {
@@ -9,14 +10,9 @@ const isActive = (path, propsRoute) => {
 }
 
 // ------------------------------
-const styles = {
-  marginBottom: 30,
-}
-
-// ------------------------------
 export default withRouter((props) => (
   <>
-    <header style={styles}>
+    <header className="l-app-header">
       <div className="hero is-small is-link">
         <div className="hero-body">
           <div className="has-text-centered">
